@@ -12,26 +12,26 @@ class ColorChangingApp : public QWidget {
 
 public:
     ColorChangingApp(QWidget* parent = nullptr) : QWidget(parent) {
-        // Устанавливаем начальную конфигурацию
+        // Г“Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г­Г Г·Г Г«ГјГ­ГіГѕ ГЄГ®Г­ГґГЁГЈГіГ°Г Г¶ГЁГѕ
         QVBoxLayout* layout = new QVBoxLayout(this);
         QPushButton* button = new QPushButton("Change Color", this);
 
-        // Подключаем сигнал нажатия кнопки к слоту для изменения цвета
+        // ГЏГ®Г¤ГЄГ«ГѕГ·Г ГҐГ¬ Г±ГЁГЈГ­Г Г« Г­Г Г¦Г ГІГЁГї ГЄГ­Г®ГЇГЄГЁ ГЄ Г±Г«Г®ГІГі Г¤Г«Гї ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГї Г¶ГўГҐГІГ 
         connect(button, &QPushButton::clicked, this, &ColorChangingApp::changeBackgroundColor);
 
         layout->addWidget(button);
         setLayout(layout);
 
-        // Генератор случайных чисел
+        // ГѓГҐГ­ГҐГ°Г ГІГ®Г° Г±Г«ГіГ·Г Г©Г­Г»Гµ Г·ГЁГ±ГҐГ«
         srand(static_cast<unsigned>(time(nullptr)));
     }
 
 private slots:
     void changeBackgroundColor() {
-        // Генерация случайного цвета
+        // ГѓГҐГ­ГҐГ°Г Г¶ГЁГї Г±Г«ГіГ·Г Г©Г­Г®ГЈГ® Г¶ГўГҐГІГ 
         QColor color(rand() % 256, rand() % 256, rand() % 256);
 
-        // Применение цвета к фону
+        // ГЏГ°ГЁГ¬ГҐГ­ГҐГ­ГЁГҐ Г¶ГўГҐГІГ  ГЄ ГґГ®Г­Гі
         QPalette palette = this->palette();
         palette.setColor(QPalette::Window, color);
         this->setPalette(palette);
@@ -49,5 +49,9 @@ int main(int argc, char* argv[]) {
 
     return app.exec();
 }
+
+return (0); //РјР°РјСѓ РЅРµ РµР±Р°Р»
+
+
 
 #include "main.moc"
