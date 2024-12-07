@@ -1,53 +1,113 @@
-#include "KABAN.h"
-#include <QApplication>
-#include <QWidget>
-#include <QPushButton>
-#include <QVBoxLayout>
-#include <QPalette>
-#include <QColor>
-#include <ctime>
+﻿#include <iostream>
+#include <vector>
+#include <string>
+#include <iomanip> // Для форматирования вывода
 
-class ColorChangingApp : public QWidget {
-    Q_OBJECT
+using namespace std;
 
-public:
-    ColorChangingApp(QWidget* parent = nullptr) : QWidget(parent) {
-        // Set up the initial configuration
-        QVBoxLayout* layout = new QVBoxLayout(this);
-        QPushButton* button = new QPushButton("Change Color", this);
-
-        // Connect the button click signal to the slot for changing the color
-        connect(button, &QPushButton::clicked, this, &ColorChangingApp::changeBackgroundColor);
-
-        layout->addWidget(button);
-        setLayout(layout);
-
-        // Random number generator
-        srand(static_cast<unsigned>(time(nullptr)));
-    }
-
-private slots:
-    void changeBackgroundColor() {
-        // Generate a random color
-        QColor color(rand() % 256, rand() % 256, rand() % 256);
-
-        // Apply the color to the background
-        QPalette palette = this->palette();
-        palette.setColor(QPalette::Window, color);
-        this->setPalette(palette);
-        this->update();
-    }
+// Структура для хранения информации о карте
+struct Card {
+    string cardNumber;
+    string currency;
 };
 
-int main(int argc, char* argv[]) {
-    QApplication app(argc, argv);
+// Глобальный вектор для хранения карт
+vector<Card> cards;
 
-    ColorChangingApp window;
-    window.setWindowTitle("Color Changing App");
-    window.resize(400, 300);
-    window.show();
-
-    return app.exec();
+// Функция для создания нового номера карты
+string generateCardNumber() {
+    static int cardCount = 1; // Счётчик карт
+    return "1234-5678-" + to_string(1000 + cardCount++);
 }
 
-#include "main.moc"
+// Функция отображения главного окна
+bool login() {
+    string login, password;
+
+    cout << setw(50) << "" << "=== Вход в систему ===" << endl;
+    cout << setw(50) << "" << "Логин: ";
+    cin >> login;
+    cout << setw(50) << "" << "Пароль: ";
+    cin >> password;
+
+    // Простая проверка (логин: admin, пароль: 1234)
+    if (login == "admin" && password == "1234") {
+        cout << setw(50) << "" << "Успешный вход!" << endl;
+        return true;
+    }
+    else {
+        cout << setw(50) << "" << "Неверный логин или пароль!" << endl;
+        return false;
+    }
+}
+
+// Функция для отображения главного меню
+void mainMenu() {
+    int choice;
+
+    while (true) {
+        cout << "\n=== Главное меню ===" << endl;
+        cout << "1. Создать новую карту" << endl;
+        cout << "2. Создать валютный счет" << endl;
+        cout << "3. Просмотреть все карты" << endl;
+        cout << "4. Выход" << endl;
+        cout << "Введите номер действия: ";
+        cin >> choice;
+
+        switch (choice) {
+        case 1: {
+            // Создание новой карты
+            Card newCard;
+            newCard.cardNumber = generateCardNumber();
+            cout << "Выберите валюту (BYN/RUB/USD/EUR/CNY): ";
+            cin >> newCard.currency;
+
+            cards.push_back(newCard);
+            cout << "Карта создана! Номер: " << newCard.cardNumber
+                << ", Валюта: " << newCard.currency << endl;
+            break;
+        }
+        case 2: {
+            // Создание валютного счета
+            string currency;
+            cout << "Выберите валюту для счета (BYN/RUB/USD/EUR/CNY): ";
+            cin >> currency;
+
+            cout << "Валютный счет с валютой " << currency << " создан!" << endl;
+            break;
+        }
+        case 3: {
+            // Просмотр всех карт
+            if (cards.empty()) {
+                cout << "Нет созданных карт." << endl;
+            }
+            else {
+                cout << "Список карт:" << endl;
+                for (const auto& card : cards) {
+                    cout << "Номер карты: " << card.cardNumber
+                        << ", Валюта: " << card.currency << endl;
+                }
+            }
+            break;
+        }
+        case 4: {
+            cout << "Выход из программы." << endl;
+            return;
+        }
+        default:
+            cout << "Неверный выбор. Попробуйте снова." << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "Rus");
+    if (login()) {
+        mainMenu();
+    }
+    else {
+        cout << "Попробуйте снова." << endl;
+    }
+
+    return 0;
+}
