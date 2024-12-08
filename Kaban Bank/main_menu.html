@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главное меню</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .menu-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .menu-container h2 {
+            margin-bottom: 20px;
+        }
+        .menu-button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu-button:hover {
+            background-color: #45a049;
+        }
+        .widget {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .widget-item {
+            background-color: #FFB74D;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <h2>Главное меню</h2>
+        <button class="menu-button" onclick="createCard()">Создать карту</button>
+        <button class="menu-button" onclick="createAccount()">Создать валютный счет</button>
+        <button class="menu-button" onclick="viewCards()">Просмотреть все карты</button>
+        <button class="menu-button" onclick="logout()">Выход</button>
+
+        <div class="widget">
+            <div class="widget-item">EUR<br>4.0331 | Текущий счет</div>
+            <div class="widget-item">RUB<br>Текущий счет</div>
+        </div>
+    </div>
+
+    <script>
+        function createCard() {
+            alert("Создание новой карты...");
+        }
+
+        function createAccount() {
+            alert("Создание валютного счета...");
+        }
+
+        function viewCards() {
+            alert("Просмотр всех карт...");
+        }
+
+        function logout() {
+            window.location.href = "login.html"; // Перенаправление на страницу входа
+        }
+    </script>
+
+</body>
+</html>
