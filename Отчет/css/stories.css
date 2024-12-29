@@ -1,0 +1,70 @@
+/* Слайд для пользовательских историй */
+#user-stories {
+    background-color: #1e1e1e; /* Серый фон */
+    color: #ffffff;
+    padding: 20px;
+    height: 100vh;
+    overflow: hidden; /* Скрыть скроллбар на родительском элементе */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем контент */
+    width: 100vw; /* Растягиваем слайд на всю ширину экрана */
+    box-sizing: border-box; /* Учитываем отступы в расчет ширины */
+}
+
+/* Заголовок слайда по центру */
+#user-stories h2 {
+    color: #e3c08b;
+    text-align: center;
+    margin: 0; /* Убираем стандартные отступы */
+    padding-top: 20px; /* Отступ сверху */
+    font-size: 2em;
+    font-weight: bold;
+    width: 100%; /* Растягиваем заголовок на всю ширину */
+}
+
+/* Контейнер для историй с прокруткой */
+.stories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Увеличиваем отступы между карточками */
+    overflow-y: scroll; /* Прокрутка для контента */
+    width: 100%; /* Убедимся, что контейнер занимает всю ширину */
+    height: calc(100vh - 60px); /* Учитываем высоту заголовка */
+    scrollbar-width: none; /* Скрываем скроллбар для Firefox */
+    -ms-overflow-style: none;  /* Скрываем скроллбар для IE/Edge */
+    padding-right: 10px; /* Добавляем небольшой отступ справа, чтобы скрыть скроллбар */
+    box-sizing: content-box; /* Убираем влияние отступов на ширину */
+}
+
+/* Скрытие скроллбаров в Webkit-браузерах */
+.stories-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Секция с историей */
+.story-category h3 {
+    color: #e3c08b;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Карточка для одной истории */
+.story-card {
+    background-color: #333333;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    padding: 15px 25px; /* Увеличиваем отступы внутри карточки */
+    color: #ffffff;
+    line-height: 1.6; /* Увеличиваем межстрочное расстояние для улучшения читаемости */
+    width: 100%; /* Ограничиваем карточку до ширины контейнера */
+    box-sizing: border-box; /* Учитываем отступы в расчете ширины */
+}
+
+.story-card strong {
+    display: block;
+    font-size: 1.3em; /* Увеличиваем размер шрифта заголовка */
+    color: #e3c08b;
+    margin-bottom: 15px; /* Увеличиваем отступы после заголовка */
+}

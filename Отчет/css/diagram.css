@@ -1,0 +1,62 @@
+
+  .diagram-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Цвет заголовков */
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #e3c08b;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Стили для SVG */
+  svg {
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Стиль для блоков диаграмм */
+  rect {
+    stroke: #333;
+    stroke-width: 2;
+    fill: #e3c08b;
+  }
+  
+  text {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    fill: black;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+  
+  /* Стиль для стрелок */
+  line {
+    stroke: #333;
+    stroke-width: 2;
+    marker-end: url(#arrow);
+  }
+  
+  /* Стиль для маркера стрелки */
+  defs marker {
+    fill: #333;
+  }
+  
+  .diagram-arrow {
+    margin: 10px 0;
+    font-size: 30px;
+    color: #555;
+  }
+  /* Стили для стрелок */
+.arrow {
+    stroke: white;
+    stroke-width: 2;
+    marker-end: url(#arrow);
+  }
+  
+  

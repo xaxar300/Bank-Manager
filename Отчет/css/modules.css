@@ -1,0 +1,74 @@
+/* Слайд для модулей */
+.module-slide {
+    background-color: #1e1e1e; /* Серый фон */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 20px;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.module-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Заголовок слайда */
+.module-slide h2 {
+    margin: 10px 0;
+    font-size: 2.5em;
+    color: #e3c08b;
+    text-align: center;
+}
+
+/* Карточка для описания */
+.module-card {
+    background-color: #333333;
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    height: 100px; /* Уменьшенная высота */
+    width: 90%; /* Более адаптивная ширина */
+    max-width: 700px; /* Максимальная ширина */
+    margin: 0 auto;
+}
+
+/* Контейнер карточек */
+.module-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Уменьшенные отступы между карточками */
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+
+/* Название модуля */
+.module-card strong {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e3c08b;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Описание модуля */
+.module-card p {
+    line-height: 1.4;
+    font-size: 1.1em;
+    color: #ffffff;
+    margin: 0;
+}

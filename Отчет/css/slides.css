@@ -1,0 +1,58 @@
+/* slides.css */
+.slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #1e1e1e;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  
+  .slide.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+  }
+  
+  .text {
+    width: 50%;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInText 1s ease-out forwards;
+  }
+  
+  .text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  
+  .image {
+    width: 45%;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInImage 1s ease-out 0.3s forwards;
+  }
+  
+  .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+  

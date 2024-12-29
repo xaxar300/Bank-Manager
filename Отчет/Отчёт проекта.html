@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Отчет по проекту "KABAN BANK"</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/slides.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/timeline.css">    
+    <link rel="stylesheet" href="css/members.css">   
+    <link rel="stylesheet" href="css/modules.css">   
+    <link rel="stylesheet" href="css/stories.css">  
+    <link rel="stylesheet" href="css/diagram.css"> 
+  </head>
+  <body>
+
+    <header>
+      <div class="header-container">
+        <h1 class="main-title">Отчет по проекту</h1>
+        <!-- Обновленный заголовок -->
+        <div class="dropdown">
+          <button class="dropbtn">Меню</button>
+          <div class="dropdown-content">
+            <a href="https://github.com/xaxar300/Bank-Manager">GitHub Репозиторий</a>
+            <a href="mailto:miliush2007@gmail.com">Email тимлида</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Первый слайд -->
+    <div class="slide active" id="goal">
+      <div class="content">
+        <!-- Текстовая часть -->
+        <div class="text">
+          <h2>Цель проекта</h2>
+          <p>
+            Наш проект направлен на создание удобного подобия банковского приложения,
+            позволяющего пользователям управлять своими счетами, картами и
+            операциями. Использование современных технологий позволяет добиться высокой гибкости и
+            производительности приложения.
+          </p>
+        </div>
+        <!-- Изображение -->
+        <div class="image">
+          <img src="logo.png" alt="Placeholder Image" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Второй слайд (Таймлайн) -->
+    <div class="slide" id="timeline-slide">
+      <h2 class="timeline-title">Таймлайн проекта</h2>
+      <!-- Заголовок добавлен здесь -->
+      <div class="timeline-container">
+        <!-- Событие 1 -->
+        <div class="timeline-event">
+          <p>Начало проекта</p>
+          <h3>10.11.2024</h3>
+        </div>
+        <!-- Событие 2 -->
+        <div class="timeline-event">
+          <p>Первый Meeting</p>
+          <h3>13.11.2024</h3>
+        </div>
+        <!-- Событие 3 -->
+        <div class="timeline-event">
+          <p>Начало работы</p>
+          <h3>30.11.2024</h3>
+        </div>
+        <!-- Событие 4 -->
+        <div class="timeline-event">
+          <p>Уход от Qt</p>
+          <h3>03.12.2024</h3>
+        </div>
+        <!-- Событие 5 -->
+        <div class="timeline-event">
+          <p>Второй Meeting</p>
+          <h3>07.12.2024</h3>
+        </div>
+        <!-- Событие 6 -->
+        <div class="timeline-event">
+          <p>Финал проекта</p>
+          <h3>29.12.2024</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Третий слайд -->
+    <div class="slide" id="team">
+      <h2 class="team-title">Список участников команды</h2>
+      <div class="team-container">
+        <div class="team-member">
+          <h3>Милюш Захар</h3>
+          <p>ТимЛид команды. Идея, архитектура, документация и тестировка.</p>
+        </div>
+        <div class="team-member">
+          <h3>Носович Арсений</h3>
+          <p>Главный программист. Работа над главным кодом, соединение модулей, работоспособность приложения.</p>
+        </div>
+        <div class="team-member">
+          <h3>Шатравко Герман</h3>
+          <p>Дизайнер. Дизайн и стилистика приложения.</p>
+        </div>
+        <div class="team-member">
+          <h3>Морозевич Владислав</h3>
+          <p>Второй программист. Хранение данных, помощь с основными модулями приложения.</p>
+        </div>
+        <div class="team-member">
+          <h3>Дрозд Владислав</h3>
+          <p>Третий программист. HTML-страницы "Условия Пользования" и "Политика Конфиденциальности", помощь в тестировке.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="module-slide">
+      <h2>Разработанные модули</h2>
+      <div class="module-grid">
+          <div class="module-card">
+              <strong>Bank.h и Bank.cpp</strong>
+              <p>Основная логика банковских операций.</p>
+          </div>
+          <div class="module-card">
+              <strong>Employee.h и Employee.cpp</strong>
+              <p>Логика для сотрудников.</p>
+          </div>
+          <div class="module-card">
+              <strong>Customer.h и Customer.cpp</strong>
+              <p>Логика для клиентов.</p>
+          </div>
+          <div class="module-card">
+              <strong>Utils.h и Utils.cpp</strong>
+              <p>Вспомогательные функции (например, fordelay, close).</p>
+          </div>
+          <div class="module-card">
+              <strong>Main.cpp</strong>
+              <p>Основной файл программы.</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="slide" id="user-stories">
+    <h2>Пользовательские истории</h2>
+    <div class="stories-container">
+        <!-- Секция Bank.h и Bank.cpp -->
+        <div class="story-category">
+            <h3>Bank.h и Bank.cpp</h3>
+            <div class="story-card">
+                <strong>Как клиент, я хочу создать новый банковский счет</strong>
+                <p>Создание нового банковского счета с уникальным номером. Проверка корректности данных.</p>
+            </div>
+            <div class="story-card">
+                <strong>Как клиент, я хочу вносить деньги на свой счет</strong>
+                <p>Функция для внесения денег на счет. Обновление баланса.</p>
+            </div>
+            <div class="story-card">
+                <strong>Как клиент, я хочу снимать деньги со своего счета</strong>
+                <p>Функция для снятия денег со счета. Проверка достаточности средств.</p>
+            </div>
+            <div class="story-card">
+                <strong>Как администратор, я хочу просматривать все счета</strong>
+                <p>Функция для получения списка всех счетов с текущими балансами.</p>
+            </div>
+        </div>
+
+        <!-- Секция Employee.h и Employee.cpp -->
+        <div class="story-category">
+            <h3>Employee.h и Employee.cpp</h3>
+            <div class="story-card">
+                <strong>Как администратор, я хочу добавлять новых сотрудников</strong>
+                <p>Добавление нового сотрудника с уникальным ID. Ввод данных сотрудника.</p>
+            </div>
+            <div class="story-card">
+                <strong>Как администратор, я хочу удалять сотрудников</strong>
+                <p>Удаление сотрудника по ID.</p>
+            </div>
+            <div class="story-card">
+                <strong>Как администратор, я хочу обновлять информацию о сотрудниках</strong>
+                <p>Редактирование данных сотрудника.</p>
+            </div>
+        </div>
+
+        <!-- Секция Utils.h и Utils.cpp -->
+        <div class="story-category">
+            <h3>Utils.h и Utils.cpp</h3>
+            <div class="story-card">
+                <strong>Как разработчик, я хочу использовать функцию задержки</strong>
+                <p>Функция fordelay для выполнения задержки.</p>
+            </div>
+            <div class="story-card">
+                <strong>Как разработчик, я хочу корректно закрывать программу</strong>
+                <p>Функция close для завершения программы.</p>
+            </div>
+        </div>
+
+        <!-- Секция Main.cpp -->
+        <div class="story-category">
+            <h3>Main.cpp</h3>
+            <div class="story-card">
+                <strong>Как пользователь, я хочу интуитивно понятный интерфейс</strong>
+                <p>Основное меню программы с вариантами для создания счета, внесения и снятия денег, управления сотрудниками и клиентами.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Слайд для модуля Bank -->
+<div class="slide" id="bank-module">
+  <h2>Модуль `Bank.h` и `Bank.cpp`</h2>
+  <div class="diagram-container">
+    <svg width="600" height="500">
+      <!-- Блоки -->
+      <rect x="200" y="20" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="300" y="50" fill="black" font-size="16">Bank</text>
+
+      <rect x="50" y="120" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="150" y="150" fill="black" font-size="16">Открыть счет</text>
+
+      <rect x="350" y="120" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="450" y="150" fill="black" font-size="16">Сотрудник банка</text>
+
+      <rect x="50" y="220" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="150" y="250" fill="black" font-size="16">Закрыть счет</text>
+
+      <rect x="350" y="220" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="450" y="250" fill="black" font-size="16">Перевести средства</text>
+
+      <!-- Стрелки -->
+      <line x1="300" y1="70" x2="150" y2="120" class="arrow" />
+      <line x1="300" y1="70" x2="450" y2="120" class="arrow" />
+      <line x1="150" y1="170" x2="150" y2="220" class="arrow" />
+      <line x1="450" y1="170" x2="450" y2="220" class="arrow" />
+
+      <!-- Стрелка в виде маркера -->
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" orient="auto" markerWidth="6" markerHeight="6">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="white" />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
+
+<!-- Слайд для модуля Employee -->
+<div class="slide" id="employee-module">
+  <h2>Модуль `Employee.h` и `Employee.cpp`</h2>
+  <div class="diagram-container">
+    <svg width="600" height="500">
+      <!-- Блоки -->
+      <rect x="200" y="20" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="300" y="50" fill="black" font-size="16">Администратор банка</text>
+
+      <rect x="50" y="120" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="150" y="150" fill="black" font-size="16">Добавить сотрудника</text>
+
+      <rect x="350" y="120" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="450" y="150" fill="black" font-size="16">Удалить сотрудника</text>
+
+      <rect x="50" y="220" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="150" y="250" fill="black" font-size="16">Обновить информацию</text>
+
+      <!-- Стрелки -->
+      <line x1="300" y1="70" x2="150" y2="120" class="arrow" />
+      <line x1="300" y1="70" x2="450" y2="120" class="arrow" />
+      <line x1="150" y1="170" x2="150" y2="220" class="arrow" />
+    </svg>
+  </div>
+</div>
+
+<!-- Слайд для модуля Customer -->
+<div class="slide" id="customer-module">
+  <h2>Модуль `Customer.h` и `Customer.cpp`</h2>
+  <div class="diagram-container">
+    <svg width="600" height="500">
+      <!-- Блоки -->
+      <rect x="200" y="20" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="300" y="50" fill="black" font-size="16">Клиент банка</text>
+
+      <rect x="50" y="120" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="150" y="150" fill="black" font-size="16">Открыть счет</text>
+
+      <rect x="350" y="120" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="450" y="150" fill="black" font-size="16">Просмотреть счет</text>
+
+      <rect x="50" y="220" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="150" y="250" fill="black" font-size="16">Совершить депозит</text>
+
+      <!-- Стрелки -->
+      <line x1="300" y1="70" x2="150" y2="120" class="arrow" />
+      <line x1="300" y1="70" x2="450" y2="120" class="arrow" />
+      <line x1="150" y1="170" x2="150" y2="220" class="arrow" />
+    </svg>
+  </div>
+</div>
+
+<!-- Слайд для модуля Utils -->
+<div class="slide" id="utils-module">
+  <h2>Модуль `Utils.h` и `Utils.cpp`</h2>
+  <div class="diagram-container">
+    <svg width="600" height="500">
+      <!-- Блоки -->
+      <rect x="200" y="20" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="300" y="50" fill="black" font-size="16">Система</text>
+
+      <rect x="50" y="120" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="150" y="150" fill="black" font-size="16">Ожидание (fordelay)</text>
+
+      <rect x="350" y="120" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="450" y="150" fill="black" font-size="16">Закрытие программы</text>
+
+      <!-- Стрелки -->
+      <line x1="300" y1="70" x2="150" y2="120" class="arrow" />
+      <line x1="300" y1="70" x2="450" y2="120" class="arrow" />
+    </svg>
+  </div>
+</div>
+
+<!-- Слайд для модуля Main -->
+<div class="slide" id="main-module">
+  <h2>Модуль `Main.cpp`</h2>
+  <div class="diagram-container">
+    <svg width="600" height="500">
+      <!-- Блоки -->
+      <rect x="200" y="20" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="300" y="50" fill="black" font-size="16">Пользователь</text>
+
+      <rect x="50" y="120" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="150" y="150" fill="black" font-size="16">Инициализация программы</text>
+
+      <rect x="350" y="120" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="450" y="150" fill="black" font-size="16">Взаимодействие с банком</text>
+
+      <rect x="50" y="220" width="200" height="50" rx="10" ry="10" fill="#e3c08b" />
+      <text x="150" y="250" fill="black" font-size="16">Завершение программы</text>
+
+      <!-- Стрелки -->
+      <line x1="300" y1="70" x2="150" y2="120" class="arrow" />
+      <line x1="300" y1="70" x2="450" y2="120" class="arrow" />
+      <line x1="150" y1="170" x2="150" y2="220" class="arrow" />
+    </svg>
+  </div>
+</div>
+
+    <script src="js/script.js"></script>
+    <script src="js/modules.js"></script>
+    <script src="js/diagram.js"></script>
+  </body>
+</html>
