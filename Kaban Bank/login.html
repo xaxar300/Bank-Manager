@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация и Авторизация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ff00d4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            z-index: 1;
+            position: relative;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #ddd;
+        }
+        .tab.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .form-container {
+            display: none;
+        }
+        .form-container.active {
+            display: block;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        /* Логотип */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        /* Время */
+        .time {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+        /* Изображение банка */
+        .bank-image {
+            width:18%;
+            height: 15%;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">KabanBank</div>
+
+    <!-- Изображение банка -->
+    <img src="пупсы.jpg" alt="Banking Image" class="bank-image">
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" id="register-tab" onclick="showForm('register')">Регистрация</div>
+            <div class="tab" id="login-tab" onclick="showForm('login')">Авторизация</div>
+        </div>
+
+        <!-- Регистрация форма -->
+        <div class="form-container active" id="register-form">
+            <h2>Регистрация</h2>
+            <div class="input-group">
+                <label for="phone-register">Номер телефона:</label>
+                <input type="tel" id="phone-register" placeholder="Введите номер телефона" required>
+            </div>
+            <div class="input-group">
+                <label for="password-register">Пароль:</label>
+                <input type="password" id="password-register" placeholder="Введите пароль" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password-register">Подтвердите пароль:</label>
+                <input type="password" id="confirm-password-register" placeholder="Подтвердите пароль" required>
+            </div>
+            <div class="input-group">
+                <label>
+                    <input type="checkbox" id="agree-register">
+                    Согласен с <a href="Политика Конфиденцииальности.html" target="_blank">условиями пользования</a> и <a href="Условия Пользования.html" target="_blank">политикой конфиденциальности</a>
+                </label>
+            </div>
+            <button class="button" id="register-button" disabled onclick="register()">Зарегистрироваться</button>
+        </div>
+
+        <!-- Авторизация форма -->
+        <div class="form-container" id="login-form">
+            <h2>Вход в систему</h2>
+            <div class="input-group">
+                <label for="phone-login">Номер телефона:</label>
+                <input type="tel" id="phone-login" placeholder="Введите номер телефона" required>
+            </div>
+            <div class="input-group">
+                <label for="password-login">Пароль:</label>
+                <input type="password" id="password-login" placeholder="Введите пароль" required>
+            </div>
+            <button class="button" onclick="login()">Войти</button>
+        </div>
+    </div>
+
+    <div class="time" id="current-time"></div>
+
+    <script>
+        // Функция для переключения между формами
+        function showForm(form) {
+            document.getElementById('register-form').classList.remove('active');
+            document.getElementById('login-form').classList.remove('active');
+            if (form === 'register') {
+                document.getElementById('register-form').classList.add('active');
+                document.getElementById('register-tab').classList.add('active');
+                document.getElementById('login-tab').classList.remove('active');
+            } else {
+                document.getElementById('login-form').classList.add('active');
+                document.getElementById('login-tab').classList.add('active');
+                document.getElementById('register-tab').classList.remove('active');
+            }
+        }
+
+        // Функция для включения/отключения кнопки регистрации в зависимости от галочки
+        document.getElementById('agree-register').addEventListener('change', function() {
+            document.getElementById('register-button').disabled = !this.checked;
+        });
+
+        // Функция для регистрации
+        function register() {
+            const phone = document.getElementById('phone-register').value;
+            const password = document.getElementById('password-register').value;
+            const confirmPassword = document.getElementById('confirm-password-register').value;
+            if (password === confirmPassword) {
+                window.location.href = "main_menu.html"; 
+            } else {
+                alert("Пароли не совпадают.");
+            }
+        }
+
+        // Пример простой проверки логина и пароля
+        function login() {
+            const phone = document.getElementById('phone-login').value;
+            const password = document.getElementById('password-login').value;
+            if (phone === "1234567890" && password === "password") {
+                window.location.href = "main_menu.html"; 
+            } else {
+                alert("Неверный номер телефона или пароль.");
+            }
+        }
+
+        // Функция для обновления времени
+        function updateTime() {
+            const currentTime = new Date();
+            const hours = String(currentTime.getHours()).padStart(2, '0');
+            const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+            const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('current-time').textContent = timeString;
+        }
+
+        // Обновлять время каждую секунду
+        setInterval(updateTime, 1000);
+        updateTime();  // Включить сразу при загрузке
+    </script>
+
+</body>
+</html>
