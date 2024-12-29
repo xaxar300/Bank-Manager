@@ -55,7 +55,7 @@ void Bank::read_data()
     cin.ignore();  // Clear buffer
     getline(cin, name);
 
-    cout << "\nEnter the date of birth (mm/dd/yyyy): ";
+    cout << "\nEnter the date of birth (dd/mm/yyyy): ";
     cin >> dob;
 
     cout << "\nEnter the age: ";
