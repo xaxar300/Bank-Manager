@@ -72,7 +72,7 @@ void Bank::read_data()
     cin >> x;
 
     if (x == 1) {
-        cout << "\nEnter the amount to deposit: Rs ";
+        cout << "\nEnter the amount to deposit: Byn ";
         cin >> depo;
     }
     else {
@@ -568,7 +568,7 @@ void Bank::transfer()
     cout << "Enter Your account number: ";
     cin >> acc_no;
 
-    // Поиск и вывод информации об аккаунте отправителя
+    // ГЏГ®ГЁГ±ГЄ ГЁ ГўГ»ГўГ®Г¤ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГЁ Г®ГЎ Г ГЄГЄГ ГіГ­ГІГҐ Г®ГІГЇГ°Г ГўГЁГІГҐГ«Гї
     do {
         getline(file, account_number, ',');
         getline(file, name, ',');
@@ -638,7 +638,7 @@ void Bank::transfer()
 
         file.seekg(0, ios::beg);
 
-        // Поиск и обновление информации о получателе
+        // ГЏГ®ГЁГ±ГЄ ГЁ Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГЁ Г® ГЇГ®Г«ГіГ·Г ГІГҐГ«ГҐ
         do {
             getline(file, account_number, ',');
             getline(file, name, ',');
@@ -683,7 +683,7 @@ void Bank::transfer()
         }
     }
 
-    // Меню после выполнения операции
+    // ГЊГҐГ­Гѕ ГЇГ®Г±Г«ГҐ ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї Г®ГЇГҐГ°Г Г¶ГЁГЁ
     bool validExitChoice = false;
     while (!validExitChoice) {
         int main_exit;
@@ -726,7 +726,7 @@ void Bank::search_rec() {
         << "\nEnter your choice: ";
     cin >> choice;
 
-    if (choice == 1) {  // Поиск по номеру счета
+    if (choice == 1) {  // ГЏГ®ГЁГ±ГЄ ГЇГ® Г­Г®Г¬ГҐГ°Гі Г±Г·ГҐГІГ 
         cout << "Enter the account number: ";
         cin >> acc_no;
 
@@ -769,7 +769,7 @@ void Bank::search_rec() {
                         t = date1 - atoi(doc.c_str());
                         rate = 15;
                         intrst = std::to_string(inter(t, amount, rate));
-                        cout << "\n\nYou will get Rs " << intrst << " as interest";
+                        cout << "\n\nYou will get BYN " << intrst << " as interest";
                         file.clear();
                         while (!file.eof()) {
                             getline(file, x, ',');
@@ -786,14 +786,14 @@ void Bank::search_rec() {
                         }
                     }
                     else {
-                        cout << "\n\nYou will get Rs 0 as interest for today...";
+                        cout << "\n\nYou will get BYN 0 as interest for today...";
                     }
                     break;
                 }
             }
         } while (is.good());
     }
-    else if (choice == 2) {  // Поиск по имени
+    else if (choice == 2) {  // ГЏГ®ГЁГ±ГЄ ГЇГ® ГЁГ¬ГҐГ­ГЁ
         cout << "Enter the Name of Account Holder: ";
         cin >> name_s;
 
@@ -836,7 +836,7 @@ void Bank::search_rec() {
                         t = date1 - atoi(doc.c_str());
                         rate = 15;
                         intrst = std::to_string(inter(t, amount, rate));
-                        cout << "\n\nYou will get Rs " << intrst << " as interest";
+                        cout << "\n\nYou will get BYN " << intrst << " as interest";
                         file.clear();
                         while (!file.eof()) {
                             getline(file, x, ',');
@@ -853,7 +853,7 @@ void Bank::search_rec() {
                         }
                     }
                     else {
-                        cout << "\n\nYou will get Rs 0 as interest for today...";
+                        cout << "\n\nYou will get Byn 0 as interest for today...";
                     }
                     break;
                 }
@@ -870,7 +870,7 @@ void Bank::search_rec() {
 
     is.close();
 
-    // Меню выбора действия после выполнения операции
+    // ГЊГҐГ­Гѕ ГўГ»ГЎГ®Г°Г  Г¤ГҐГ©Г±ГІГўГЁГї ГЇГ®Г±Г«ГҐ ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї Г®ГЇГҐГ°Г Г¶ГЁГЁ
     bool validExitChoice = false;
     while (!validExitChoice) {
         int main_exit;
