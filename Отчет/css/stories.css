@@ -1,40 +1,40 @@
 /* Слайд для пользовательских историй */
 #user-stories {
-    background-color: #1e1e1e; /* Серый фон */
+    background-color: #1e1e1e;
     color: #ffffff;
     padding: 20px;
     height: 100vh;
-    overflow: hidden; /* Скрыть скроллбар на родительском элементе */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем контент */
-    width: 100vw; /* Растягиваем слайд на всю ширину экрана */
-    box-sizing: border-box; /* Учитываем отступы в расчет ширины */
+    align-items: center;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
 /* Заголовок слайда по центру */
 #user-stories h2 {
     color: #e3c08b;
     text-align: center;
-    margin: 0; /* Убираем стандартные отступы */
-    padding-top: 20px; /* Отступ сверху */
+    margin: 0;
+    padding-top: 20px;
     font-size: 2em;
     font-weight: bold;
-    width: 100%; /* Растягиваем заголовок на всю ширину */
+    width: 100%;
 }
 
 /* Контейнер для историй с прокруткой */
 .stories-container {
     display: flex;
     flex-direction: column;
-    gap: 50px; /* Увеличиваем отступы между карточками */
-    overflow-y: scroll; /* Прокрутка для контента */
-    width: 100%; /* Убедимся, что контейнер занимает всю ширину */
-    height: calc(100vh - 60px); /* Учитываем высоту заголовка */
-    scrollbar-width: none; /* Скрываем скроллбар для Firefox */
-    -ms-overflow-style: none;  /* Скрываем скроллбар для IE/Edge */
-    padding-right: 10px; /* Добавляем небольшой отступ справа, чтобы скрыть скроллбар */
-    box-sizing: content-box; /* Убираем влияние отступов на ширину */
+    gap: 50px; 
+    overflow-y: scroll; 
+    width: 100%; 
+    height: calc(100vh - 60px); 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    padding-right: 10px;
+    box-sizing: content-box; 
 }
 
 /* Скрытие скроллбаров в Webkit-браузерах */
@@ -55,17 +55,17 @@
     background-color: #333333;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    padding: 15px 25px; /* Увеличиваем отступы внутри карточки */
+    padding: 15px 25px;
     margin: 15px;
     color: #ffffff;
-    line-height: 1.6; /* Увеличиваем межстрочное расстояние для улучшения читаемости */
-    width: 100%; /* Ограничиваем карточку до ширины контейнера */
-    box-sizing: border-box; /* Учитываем отступы в расчете ширины */
+    line-height: 1.6; 
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 .story-card strong {
     display: block;
-    font-size: 1.3em; /* Увеличиваем размер шрифта заголовка */
+    font-size: 1.3em;
     color: #e3c08b;
-    margin-bottom: 15px; /* Увеличиваем отступы после заголовка */
+    margin-bottom: 15px;
 }
